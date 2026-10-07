@@ -1,0 +1,18 @@
+{
+  "name": "secure-voting-system-demo",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n backend,frontend -c green,cyan \"npm run dev --workspace backend\" \"npm run dev --workspace frontend -- --host\"",
+    "dev:backend": "npm run dev --workspace backend",
+    "dev:frontend": "npm run dev --workspace frontend -- --host",
+    "build": "npm run build --workspace frontend",
+    "start": "npm run start --workspace backend"
+  },
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
